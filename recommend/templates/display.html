@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialists</title>
+    <link rel="stylesheet" href="{% static 'display.css' %}">
+</head>
+<body>
+    <div class="display">
+        {% if not doctors %}
+        <p >No doctors found for {{specialisation}}s</p>
+        {% else %}
+        <p>You may consult following {{specialisation}}s</p>
+        <table>
+            <thead>
+                <tr>
+                    <!-- <th>Sno.</th> -->
+                    <th>Doctor Name</th>
+                    <!-- <th>Rating</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for doc in doctors %}
+                <tr>
+                    <!-- <td>1</td> -->
+                    <td>{{doc.name}}</td>
+                    <!-- <td>4.5</td> -->
+                </tr>
+                {% endfor %}
+                <!-- <tr>
+                    <td>2</td>
+                    <td>Dr. Jane Smith</td>
+                    <td>4.8</td>
+                </tr> -->
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        {% endif %}
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Data</title>
+    <link rel="stylesheet" href="{% static 'doctor.css' %}">
+</head>
+<body>
+    <div class="doctor">
+      <form class="doctor_form" action="" method="post" >
+        <h1>Doctor page</h1>
+        <!-- <label>Name : </label> -->
+        
+        <input type="text" name="Name" placeholder="Doctor Name" enctype="multipart/form-data" class="doctor_name">
+        <br/>
+        <label>Specialisation</label>
+        <select name="specialisation" id="dropdown" class="doctor_spec" >
+            <option>Dermatologist</option>
+            <option>Allergist</option>
+            <option>Gastroenterologist</option>
+            <option>Hepatologist</option>
+            <option>Osteopathic</option>
+            <option>Endocrinologist</option>
+            <option>Pulmonologist</option>
+            <option>Cardiologist</option>
+            <option>Neurologist</option>
+            <option>Internal Medcine</option>
+            <option>Pediatrician</option>
+            <option>Common Cold</option>
+            <option>Cardiologist</option>
+            <option>Phlebologist</option>
+            <option>Osteoarthristis</option>
+            <option>Rheumatologists</option>
+            <option>Otolaryngologist</option>
+            <option>Gynecologist</option>
+        </select>
+        {% csrf_token %}
+        <button>Submit</button>
+    </form>
+    </div>
+    
+    <script>
+        // Retrieve the dropdown element
+        const dropdown = document.getElementById('dropdown');
+
+        // Get the options and convert them into an array
+        const options = Array.from(dropdown.options);
+
+        // Sort the options based on their text content
+        options.sort((a, b) => a.textContent.localeCompare(b.textContent));
+
+        // Clear existing options from the dropdown
+        dropdown.innerHTML = '';
+
+        // Add the sorted options back to the dropdown
+        options.forEach(option => dropdown.appendChild(option));
+    </script>
+</body>
+</html>
