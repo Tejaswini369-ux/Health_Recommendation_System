@@ -1,0 +1,38 @@
+body{
+
+    overflow: hidden;
+}
+
+.display{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p{
+    padding: 20px;
+    font-size: 20px;
+}
+
+table{
+    width: 80%;
+}
+thead tr{
+    background-color: #4A9CA6;
+}
+
+th, td {
+    padding: 20px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #4a9ba648; /* Set background color for even rows */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: white; /* Set background color for odd rows */
+}
