@@ -16,6 +16,7 @@ All the required packages are in requirements.txt file in the folder
 Make sure that python>3.7 is installed
 In terminal reach to main folder --> cd healthcare_reccomendation_system
 Then run the following commands in terminal:
+
         python -m venv env
         ./env/Scripts/activate
         pip install -r requirements.txt
